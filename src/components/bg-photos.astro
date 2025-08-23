@@ -1,0 +1,531 @@
+---
+import { Image } from 'astro:assets'
+import bgPhoto1 from '@/images/bg-photo-1.jpg'
+---
+
+<div class='parallax-container'>
+  <div class='parallax-scene'>
+    <!-- Capa más lejana (más lenta) - 6 imágenes -->
+    <div class='parallax-layer layer-far'>
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-1'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-2'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-3'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-4'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-11'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa lejana'
+        class='parallax-image image-12'
+      />
+    </div>
+
+    <!-- Capa media - 5 imágenes -->
+    <div class='parallax-layer layer-mid'>
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa media'
+        class='parallax-image image-5'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa media'
+        class='parallax-image image-6'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa media'
+        class='parallax-image image-7'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa media'
+        class='parallax-image image-13'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa media'
+        class='parallax-image image-14'
+      />
+    </div>
+
+    <!-- Capa cercana (más rápida) - 5 imágenes -->
+    <div class='parallax-layer layer-near'>
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa cercana'
+        class='parallax-image image-8'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa cercana'
+        class='parallax-image image-9'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa cercana'
+        class='parallax-image image-10'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa cercana'
+        class='parallax-image image-15'
+      />
+      <Image
+        src={bgPhoto1}
+        alt='Foto de fondo - capa cercana'
+        class='parallax-image image-16'
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .parallax-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .parallax-image {
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    width: auto;
+    will-change: transform;
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+  }
+
+  /* Animaciones de parallax para cada capa */
+  .layer-far .parallax-image {
+    animation-name: parallax-slow;
+    animation-duration: 1ms; /* Requerido para scroll-driven animations */
+    filter: contrast(0.3);
+  }
+
+  .layer-mid .parallax-image {
+    animation-name: parallax-medium;
+    animation-duration: 1ms;
+    filter: contrast(0.8);
+  }
+
+  .layer-near .parallax-image {
+    animation-name: parallax-fast;
+    animation-duration: 1ms;
+  }
+
+  /* Keyframes para diferentes velocidades de parallax */
+  @keyframes parallax-slow {
+    from {
+      transform: translateY(0) var(--rotation, rotate(0deg));
+    }
+    to {
+      transform: translateY(20vh) var(--rotation, rotate(0deg));
+    }
+  }
+
+  @keyframes parallax-medium {
+    from {
+      transform: translateY(0) var(--rotation, rotate(0deg));
+    }
+    to {
+      transform: translateY(50vh) var(--rotation, rotate(0deg));
+    }
+  }
+
+  @keyframes parallax-fast {
+    from {
+      transform: translateY(0) var(--rotation, rotate(0deg));
+    }
+    to {
+      transform: translateY(80vh) var(--rotation, rotate(0deg));
+    }
+  }
+
+  /* Posicionamiento y estilos específicos */
+
+  /* Capa lejana - 4 imágenes con mayor blur y menor opacidad */
+  .image-1 {
+    top: 8%;
+    left: 3%;
+    height: 80px;
+    opacity: 0.35;
+    filter: blur(1.5px);
+    --rotation: rotate(-18deg);
+  }
+
+  .image-2 {
+    top: 65%;
+    right: 8%;
+    height: 75px;
+    opacity: 0.3;
+    filter: blur(1.2px);
+    --rotation: rotate(12deg);
+  }
+
+  .image-3 {
+    top: 35%;
+    right: 25%;
+    height: 85px;
+    opacity: 0.4;
+    filter: blur(1px);
+    --rotation: rotate(-25deg);
+  }
+
+  .image-4 {
+    top: 85%;
+    left: 15%;
+    height: 78px;
+    opacity: 0.35;
+    filter: blur(1.3px);
+    --rotation: rotate(8deg);
+  }
+
+  /* Capa media - 3 imágenes con blur medio */
+  .image-5 {
+    top: 20%;
+    left: 12%;
+    height: 100px;
+    opacity: 0.6;
+    filter: blur(0.7px);
+    --rotation: rotate(-12deg);
+  }
+
+  .image-6 {
+    top: 75%;
+    left: 55%;
+    height: 105px;
+    opacity: 0.55;
+    filter: blur(0.5px);
+    --rotation: rotate(15deg);
+  }
+
+  .image-7 {
+    top: 50%;
+    right: 5%;
+    height: 95px;
+    opacity: 0.65;
+    filter: blur(0.6px);
+    --rotation: rotate(-8deg);
+  }
+
+  /* Capa cercana - 3 imágenes más nítidas y opacas */
+  .image-8 {
+    top: 5%;
+    right: 12%;
+    height: 120px;
+    opacity: 0.8;
+    filter: blur(0px);
+    --rotation: rotate(-15deg);
+  }
+
+  .image-9 {
+    top: 42%;
+    left: 6%;
+    height: 125px;
+    opacity: 0.75;
+    filter: blur(0.2px);
+    --rotation: rotate(10deg);
+  }
+
+  .image-10 {
+    top: 78%;
+    right: 20%;
+    height: 115px;
+    opacity: 0.85;
+    filter: blur(0px);
+    --rotation: rotate(-5deg);
+  }
+
+  /* Imágenes ocultas arriba - Capa lejana */
+  .image-11 {
+    top: -15%;
+    left: 25%;
+    height: 85px;
+    opacity: 0.35;
+    filter: blur(1.4px);
+    --rotation: rotate(20deg);
+  }
+
+  .image-12 {
+    top: -5%;
+    right: 5%;
+    height: 78px;
+    opacity: 0.3;
+    filter: blur(1.6px);
+    --rotation: rotate(-15deg);
+  }
+
+  /* Imágenes ocultas arriba - Capa media */
+  .image-13 {
+    top: -20%;
+    left: 45%;
+    height: 98px;
+    opacity: 0.6;
+    filter: blur(0.8px);
+    --rotation: rotate(-22deg);
+  }
+
+  .image-14 {
+    top: -10%;
+    right: 45%;
+    height: 102px;
+    opacity: 0.55;
+    filter: blur(0.6px);
+    --rotation: rotate(18deg);
+  }
+
+  /* Imágenes ocultas arriba - Capa cercana */
+  .image-15 {
+    top: -30%;
+    left: 15%;
+    height: 118px;
+    opacity: 0.8;
+    filter: blur(0.1px);
+    --rotation: rotate(25deg);
+  }
+
+  .image-16 {
+    top: -50%;
+    right: 5%;
+    height: 112px;
+    opacity: 0.75;
+    filter: blur(0.2px);
+    --rotation: rotate(20deg);
+  }
+
+  /* Fallback para navegadores que no soportan scroll-driven animations */
+  @supports not (animation-timeline: scroll()) {
+    .parallax-image {
+      animation: none;
+    }
+
+    .image-1 {
+      transform: var(--rotation, rotate(-18deg));
+    }
+    .image-2 {
+      transform: var(--rotation, rotate(12deg));
+    }
+    .image-3 {
+      transform: var(--rotation, rotate(-25deg));
+    }
+    .image-4 {
+      transform: var(--rotation, rotate(8deg));
+    }
+    .image-5 {
+      transform: var(--rotation, rotate(-12deg));
+    }
+    .image-6 {
+      transform: var(--rotation, rotate(15deg));
+    }
+    .image-7 {
+      transform: var(--rotation, rotate(-8deg));
+    }
+    .image-8 {
+      transform: var(--rotation, rotate(-15deg));
+    }
+    .image-9 {
+      transform: var(--rotation, rotate(10deg));
+    }
+    .image-10 {
+      transform: var(--rotation, rotate(-5deg));
+    }
+    .image-11 {
+      transform: var(--rotation, rotate(20deg));
+    }
+    .image-12 {
+      transform: var(--rotation, rotate(-15deg));
+    }
+    .image-13 {
+      transform: var(--rotation, rotate(-22deg));
+    }
+    .image-14 {
+      transform: var(--rotation, rotate(18deg));
+    }
+    .image-15 {
+      transform: var(--rotation, rotate(25deg));
+    }
+    .image-16 {
+      transform: var(--rotation, rotate(-20deg));
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    /* Ajustes generales para móviles */
+    .parallax-image {
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Capa lejana - tamaños más pequeños */
+    .image-1,
+    .image-2,
+    .image-3,
+    .image-4,
+    .image-11,
+    .image-12 {
+      height: 35px !important;
+      opacity: 0.25 !important;
+    }
+
+    /* Capa media - tamaños medianos */
+    .image-5,
+    .image-6,
+    .image-7,
+    .image-13,
+    .image-14 {
+      height: 50px !important;
+      opacity: 0.5 !important;
+    }
+
+    /* Capa cercana - tamaños más grandes pero controlados */
+    .image-8,
+    .image-9,
+    .image-10,
+    .image-15,
+    .image-16 {
+      height: 65px !important;
+      opacity: 0.7 !important;
+    }
+
+    /* Ajustes de posición específicos para móviles */
+    .image-1 {
+      top: 12%;
+      left: 2%;
+    }
+    .image-2 {
+      top: 70%;
+      right: 5%;
+    }
+    .image-3 {
+      top: 40%;
+      right: 20%;
+    }
+    .image-4 {
+      top: 88%;
+      left: 10%;
+    }
+
+    .image-5 {
+      top: 25%;
+      left: 8%;
+    }
+    .image-6 {
+      top: 78%;
+      left: 50%;
+    }
+    .image-7 {
+      top: 55%;
+      right: 3%;
+    }
+
+    .image-8 {
+      top: 8%;
+      right: 8%;
+    }
+    .image-9 {
+      top: 45%;
+      left: 4%;
+    }
+    .image-10 {
+      top: 82%;
+      right: 15%;
+    }
+
+    /* Nuevas imágenes arriba en móviles */
+    .image-11 {
+      top: -20%;
+      left: 20%;
+    }
+    .image-12 {
+      top: -30%;
+      right: 25%;
+    }
+    .image-13 {
+      top: -25%;
+      left: 40%;
+    }
+    .image-14 {
+      top: -15%;
+      right: 40%;
+    }
+    .image-15 {
+      top: -35%;
+      left: 10%;
+    }
+    .image-16 {
+      top: -40%;
+      right: 10%;
+    }
+
+    /* Reducir el movimiento en móviles */
+    @keyframes parallax-slow {
+      from {
+        transform: translateY(0) var(--rotation, rotate(0deg));
+      }
+      to {
+        transform: translateY(8vh) var(--rotation, rotate(0deg));
+      }
+    }
+
+    @keyframes parallax-medium {
+      from {
+        transform: translateY(0) var(--rotation, rotate(0deg));
+      }
+      to {
+        transform: translateY(20vh) var(--rotation, rotate(0deg));
+      }
+    }
+
+    @keyframes parallax-fast {
+      from {
+        transform: translateY(0) var(--rotation, rotate(0deg));
+      }
+      to {
+        transform: translateY(35vh) var(--rotation, rotate(0deg));
+      }
+    }
+  }
+</style>

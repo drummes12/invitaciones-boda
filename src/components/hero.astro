@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import bgHero from '@/images/bg-hero.avif'
+---
+
+<header class='relative w-full h-100-screen flex items-center justify-center'>
+  <div class='-z-10 absolute w-full h-full flex items-center justify-center'>
+    <Image
+      src={bgHero}
+      alt='Foto de Mabel y Esteban'
+      class='absolute grayscale-100 contrast-75 opacity-60 h-full object-cover object-center'
+    />
+    <div class='absolute inset-0 pointer-events-none noise-overlay'></div>
+    <h3
+      class='z-10 font-logo font-bold text-white/40 text-[10rem] tracking-tighter'
+    >
+      ME
+    </h3>
+  </div>
+
+  <h1
+    class='text-white font-serif flex flex-col items-center justify-center text-[6rem] leading-[1]'
+  >
+    <span>12</span>
+    <span>11</span>
+    <span>25</span>
+  </h1>
+
+  <h2 class='absolute top-10 text-md uppercase text-white font-serif'>
+    Guarda la fecha
+  </h2>
+</header>
+
+<style>
+  .noise-overlay {
+    background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%20400%20400%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%0A%20%20%3Cfilter%20id%3D%27noiseFilter%27%3E%0A%20%20%20%20%3CfeTurbulence%20%0A%20%20%20%20%20%20type%3D%27fractalNoise%27%20%0A%20%20%20%20%20%20baseFrequency%3D%275.44%27%20%0A%20%20%20%20%20%20numOctaves%3D%271%27%20%0A%20%20%20%20%20%20stitchTiles%3D%27stitch%27%2F%3E%0A%20%20%3C%2Ffilter%3E%0A%20%20%0A%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23noiseFilter%29%27%2F%3E%0A%3C%2Fsvg%3E');
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+  }
+</style>
