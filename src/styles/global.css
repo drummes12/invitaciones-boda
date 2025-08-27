@@ -2,11 +2,7 @@
 
 @theme {
   --font-logo: 'Babylonica', 'sans-serif';
-  /* Alternative: */
-  /* 1. https://fontsource.org/fonts/island-moments */
-  /* 2. https://fontsource.org/fonts/the-nautigal */
-  /* 3. https://fontsource.org/fonts/whisper */
-  /* 4. https://fontsource.org/fonts/fuggles */
+  --font-licorice: 'Licorice', 'sans-serif';
 }
 
 @utility h-100-screen {
