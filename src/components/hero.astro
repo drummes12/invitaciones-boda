@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import bgHero from '@/images/bg-hero.avif'
 ---
 
-<header class='relative w-full h-100-screen flex items-center justify-center'>
+<header class='relative w-full h-screen flex items-center justify-center'>
   <div class='-z-10 absolute w-full h-full flex items-center justify-center'>
     <Image
       src={bgHero}
@@ -16,6 +16,10 @@ import bgHero from '@/images/bg-hero.avif'
     >
       ME
     </h3>
+    <div
+      class='w-full absolute bottom-0 h-full bg-gradient-to-t from-white via-white/50 via-10% from-7% to-15% to-transparent'
+    >
+    </div>
   </div>
 
   <h1

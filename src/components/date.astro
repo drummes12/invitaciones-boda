@@ -7,13 +7,13 @@ import SquareIcon from '@/icons/square.astro'
 <section
   class='px-12 py-20 h-100-screen flex flex-col items-center justify-center text-center gap-4'
 >
-  <h1 class='text-5xl mb-4'>XII</h1>
-  <small class='font-licorice text-xl mb-12'
+  <h1 class='text-5xl mb-4 opacity-90'>XII</h1>
+  <small class='font-licorice text-xl mb-12 text-primary-light/60'
     >Tenemos el honor de invitarte a nuestra boda</small
   >
 
   <div>
-    <p class='text-3xl mb-4'>Noviembre</p>
+    <p class='text-3xl mb-4 text-primary'>Noviembre</p>
 
     <div class='date flex justify-between items-center gap-4'>
       <div>
@@ -31,7 +31,9 @@ import SquareIcon from '@/icons/square.astro'
       <div class='relative'>
         <span>M</span>
         <span>12</span>
-        <HeartIcon class='absolute bottom-0 size-8 opacity-40' />
+        <HeartIcon
+          class='absolute bottom-0 size-8 opacity-40 text-primary-dark'
+        />
       </div>
       <div>
         <span>J</span>
@@ -49,8 +51,8 @@ import SquareIcon from '@/icons/square.astro'
   </div>
 
   <div class='relative flex items-center justify-center my-14'>
-    <p class='text-4xl'>02:00 pm</p>
-    <ClockIcon class='size-20 absolute opacity-20' />
+    <p class='text-4xl opacity-90'>02:00 pm</p>
+    <ClockIcon class='size-20 absolute opacity-20 text-primary' />
   </div>
 
   <div class='flex flex-col justify-center items-center'>
@@ -58,22 +60,30 @@ import SquareIcon from '@/icons/square.astro'
     <div class='flex justify-center items-center gap-8' id='countdown'>
       <div class='relative flex flex-col items-center'>
         <h3 class='text-4xl' id='days'>--</h3>
-        <small class='font-licorice text-lg leading-tight'>Días</small>
+        <small class='font-licorice text-lg leading-tight text-primary'
+          >Días</small
+        >
         <SquareIcon class='absolute -top-3 size-16 opacity-40' />
       </div>
       <div class='relative flex flex-col items-center'>
         <h3 class='text-4xl' id='hours'>--</h3>
-        <small class='font-licorice text-lg leading-tight'>Horas</small>
+        <small class='font-licorice text-lg leading-tight text-primary'
+          >Horas</small
+        >
         <SquareIcon class='absolute -top-3 size-16 opacity-40' />
       </div>
       <div class='relative flex flex-col items-center'>
         <h3 class='text-4xl' id='minutes'>--</h3>
-        <small class='font-licorice text-lg leading-tight'>Minutos</small>
+        <small class='font-licorice text-lg leading-tight text-primary'
+          >Minutos</small
+        >
         <SquareIcon class='absolute -top-3 size-16 opacity-40' />
       </div>
       <div class='relative flex flex-col items-center'>
         <h3 class='text-4xl' id='seconds'>--</h3>
-        <small class='font-licorice text-lg leading-tight'>Segundos</small>
+        <small class='font-licorice text-lg leading-tight text-primary'
+          >Segundos</small
+        >
         <SquareIcon class='absolute -top-3 size-16 opacity-40' />
       </div>
     </div>

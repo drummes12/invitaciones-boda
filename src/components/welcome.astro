@@ -4,10 +4,12 @@ import photo from '@/images/photo-kiss.avif'
 ---
 
 <section
-  class='px-12 py-20 h-100-screen flex flex-col items-center justify-center text-center gap-4'
+  class='relative px-12 py-20 h-100-screen flex flex-col items-center justify-center text-center gap-4'
 >
-  <small class='font-licorice text-2xl mb-8'>¡Nos casamos!</small>
-  <h1 class='font-logo text-5xl'>Mabel &amp; Esteban</h1>
+  <small class='font-licorice text-2xl mb-8 text-primary-dark'
+    >¡Nos casamos!</small
+  >
+  <h1 class='font-logo text-5xl opacity-90'>Mabel &amp; Esteban</h1>
 
   <picture class='relative flex justify-center items-center'>
     <Image src={photo} alt='Beso de Mabel y Esteban' class='w-4/5 z-10' />
@@ -23,7 +25,7 @@ import photo from '@/images/photo-kiss.avif'
     />
   </picture>
 
-  <p>
+  <p class='text-primary'>
     “En cada paso que hemos dado juntos descubrimos que la vida es mejor de la
     mano. Hoy damos gracias a Dios por este amor y por el inicio de nuestra
     familia.”

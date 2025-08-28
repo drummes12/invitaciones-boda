@@ -3,6 +3,9 @@
 @theme {
   --font-logo: 'Babylonica', 'sans-serif';
   --font-licorice: 'Licorice', 'sans-serif';
+  --color-primary: #659c32;
+  --color-primary-light: #8cc644;
+  --color-primary-dark: #4a6d23;
 }
 
 @utility h-100-screen {
