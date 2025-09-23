@@ -1,19 +1,20 @@
 ---
-import PinterestIcon from '@/icons/pinterest.astro'
 import LinkIcon from '@/icons/link.astro'
 
 export interface ExternalLinkProps {
   href: string
   text: string
+  Icon: any
   bgColor?: string
   textColor?: string
 }
 
 const {
   href,
+  text,
+  Icon,
   bgColor = 'bg-red-600',
-  textColor = 'text-white',
-  text
+  textColor = 'text-white'
 } = Astro.props
 ---
 
@@ -24,7 +25,7 @@ const {
   class={`group inline-flex items-center gap-3 px-6 py-3 ${bgColor} hover:contrast-125 ${textColor} rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl`}
 >
   <!-- Icono de Pinterest -->
-  <PinterestIcon class='size-12' />
+  <Icon class='size-12' />
   <span class='font-medium'>{text}</span>
   <LinkIcon class='size-8' />
 </a>
