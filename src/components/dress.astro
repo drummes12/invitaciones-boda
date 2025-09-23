@@ -1,5 +1,7 @@
 ---
 import PinterestIcon from '@/icons/pinterest.astro'
+import LinkIcon from '@/icons/link.astro'
+import ExternalLink from './external-link.astro'
 ---
 
 <section
@@ -83,29 +85,10 @@ import PinterestIcon from '@/icons/pinterest.astro'
     <!-- Enlace a Pinterest -->
     <div class='flex flex-col items-center gap-4'>
       <p class='text-gray-600'>¿Necesitas más inspiración?</p>
-      <a
+      <ExternalLink
         href='https://pin.it/5y7ID7BjE'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='group inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl'
-      >
-        <!-- Icono de Pinterest -->
-        <PinterestIcon class='size-12' />
-        <span class='font-medium'>Ver más ideas en Pinterest</span>
-        <svg
-          class='w-4 h-4 group-hover:translate-x-1 transition-transform duration-300'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='2'
-            d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-          ></path>
-        </svg>
-      </a>
+        text='Ver más ideas en Pinterest'
+      />
     </div>
 
     <!-- Mensaje adicional -->
