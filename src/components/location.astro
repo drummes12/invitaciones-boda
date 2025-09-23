@@ -1,0 +1,70 @@
+---
+import PinIcon from '@/icons/pin.astro'
+import GoogleMapsIcon from '@/icons/google-maps.astro'
+import WazeIcon from '@/icons/waze.astro'
+import InfoIcon from '@/icons/info.astro'
+import GiftIcon from '@/icons/gift.astro'
+
+import ExternalLink from './external-link.astro'
+---
+
+<section
+  class='px-12 py-20 min-h-100-screen flex flex-col items-center justify-center text-center gap-8'
+>
+  <!-- Título con decoración floral -->
+  <h2 class='text-center text-3xl'>Lugar de la Ceremonia</h2>
+
+  <img
+    src='/images/map.webp'
+    alt='Lugar de la ceremonia'
+    class='max-w-full rounded-md'
+  />
+
+  <div
+    class='font-licorice text-primary justify-center flex items-center flex-col'
+  >
+    <PinIcon class='size-7 mb-1' />
+    <h3 class='text-3xl'>Hotel Campestre Mirador Calopala</h3>
+    <p class='text-xl opacity-70'>Macheta, Cundinamarca</p>
+  </div>
+
+  <div class='flex flex-col gap-4 justify-center items-center'>
+    <ExternalLink
+      href='https://maps.app.goo.gl/P3S41bSmRUNGwiov5'
+      text='Ir con Google Maps'
+      Icon={GoogleMapsIcon}
+      bgColor='bg-gray-200'
+      textColor='text-gray-800'
+    />
+    <ExternalLink
+      href='https://ul.waze.com/ul?place=ChIJKYJ7HcAbQI4RjRJadK0DAlY&ll=5.07553080%2C-73.58082150&navigate=yes&utm_campaign=share_drive&utm_source=waze_app&utm_medium=lm_share_location'
+      text='Ir con Waze'
+      Icon={WazeIcon}
+      bgColor='bg-[#05c8f7]'
+      textColor='text-gray-900'
+    />
+  </div>
+
+  <div
+    class='flex justify-center items-start gap-2 p-2 opacity-60 text-red-800'
+  >
+    <InfoIcon class='w-12 my-auto' />
+    <p class='text-left text-sm leading-snug'>
+      Informamos si <strong>NO</strong> cuentas con forma de traslado al lugar, encontraremos
+      solución juntos.
+    </p>
+  </div>
+
+  <div
+    class='flex flex-col items-center gap-2 bg-gray-200 rounded-md p-2 opacity-80 text-primary-dark shadow-lg'
+  >
+    <GiftIcon class='w-12' />
+    <div class='text-sm'>
+      <p>No tenemos lista de regalos ni link de obsequios monetarios</p>
+      <p>
+        El mejor regalo es que nos acompañen en este día tan especial. Pero Si
+        desean hacernos un detalle, será bienvenido.
+      </p>
+    </div>
+  </div>
+</section>
