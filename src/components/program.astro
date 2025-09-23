@@ -1,0 +1,128 @@
+---
+import Marco from '@/icons/marco.astro'
+import Anillos from '@/icons/anillos.astro'
+---
+
+<section
+  class='px-12 py-20 h-100-screen flex flex-col items-center justify-center text-center relative overflow-hidden'
+>
+  <div class='relative z-10 bg-white w-full max-w-2xl mx-auto'>
+    <h1 class='text-2xl font-serif mb-12 tracking-wider uppercase opacity-80'>
+      Programación
+    </h1>
+
+    <!-- Timeline -->
+    <div class='relative max-w-lg mx-auto'>
+      <!-- Línea vertical central -->
+      <div
+        class='absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary-dark/70'
+      >
+      </div>
+
+      <div class='space-y-8'>
+        <!-- Entrada y cócteles -->
+        <div class='flex items-center relative'>
+          <div class='relative flex-1 pr-10 text-right'>
+            <Marco class='absolute w-7 h-full right-1.5 opacity-40' />
+            <div class='flex flex-col items-end justify-center gap-1'>
+              <p class='font-licorice text-2xl text-primary leading-tight'>
+                Entrada y cócteles
+              </p>
+              <p class='text-sm text-slate-600'>2:00 pm</p>
+            </div>
+          </div>
+          <div
+            class='absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white'
+          >
+          </div>
+          <div class='relative flex-1 pl-10'></div>
+        </div>
+
+        <!-- Ceremonia -->
+        <div class='flex items-center relative'>
+          <div class='relative flex-1 pr-10 text-right'></div>
+          <div
+            class='absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white'
+          >
+          </div>
+          <div class='relative flex-1 pl-10'>
+            <Anillos class='absolute w-7 h-full left-1.5 opacity-80' />
+            <div class='flex flex-col items-start justify-center gap-1'>
+              <p class='font-licorice text-2xl text-primary leading-tight'>
+                Ceremonia
+              </p>
+              <p class='text-sm text-slate-600'>4:00 pm</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brindis -->
+        <div class='flex items-center relative'>
+          <div class='relative flex-1 pr-10 text-right'>
+            <img
+              src='/images/copas.webp'
+              class='absolute w-7 h-full right-1.5 grayscale-100 object-contain opacity-40'
+            />
+            <div class='flex flex-col items-end justify-center gap-1'>
+              <p class='font-licorice text-2xl text-primary leading-tight'>
+                Brindis
+              </p>
+              <p class='text-sm text-slate-600'>6:00 pm</p>
+            </div>
+          </div>
+          <div
+            class='absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white'
+          >
+          </div>
+          <div class='relative flex-1 pl-10'></div>
+        </div>
+
+        <!-- Recepción -->
+        <div class='flex items-center relative'>
+          <div class='relative flex-1 pr-10 text-right'></div>
+          <div
+            class='absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white'
+          >
+          </div>
+          <div class='relative flex-1 pl-10'>
+            <img
+              src='/images/cake.webp'
+              class='absolute w-7 h-full left-1.5 grayscale-100 object-contain opacity-40'
+            />
+            <div class='flex flex-col items-start justify-center gap-1'>
+              <p class='font-licorice text-2xl text-primary leading-tight'>
+                Recepción
+              </p>
+              <p class='text-sm text-slate-600'>7:00 pm</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fin -->
+        <div class='flex items-center relative'>
+          <div class='relative flex-1 pr-10 text-right'>
+            <img
+              src='/images/car.webp'
+              class='absolute w-7 h-full right-1.5 grayscale-100 object-contain opacity-40'
+            />
+            <div class='flex flex-col items-end justify-center gap-1'>
+              <p class='font-licorice text-2xl text-primary leading-tight'>
+                Fin
+              </p>
+              <p class='text-sm text-slate-600'>12:00 pm</p>
+            </div>
+          </div>
+          <div
+            class='absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white'
+          >
+          </div>
+          <div class='relative flex-1 pl-10'></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class='mt-12 leading-tight text-primary-dark'>
+      Y fuerón felices por siempre...
+    </h2>
+  </div>
+</section>
