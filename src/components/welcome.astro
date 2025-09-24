@@ -1,27 +1,31 @@
 ---
 import { Image } from 'astro:assets'
-import photo from '@/images/photo-kiss.avif'
+import photo from '@/images/photo-us.jpeg'
 ---
 
 <section
   class='relative px-8 py-14 min-h-100-screen flex flex-col items-center justify-center text-center gap-4'
 >
-  <small class='font-licorice text-2xl mb-8 text-primary-dark'
+  <small class='font-licorice text-4xl mb-8 text-primary-dark'
     >¡Nos casamos!</small
   >
   <h1 class='font-logo text-5xl opacity-90'>Mabel &amp; Esteban</h1>
 
   <picture class='relative flex justify-center items-center'>
-    <Image src={photo} alt='Beso de Mabel y Esteban' class='w-4/5 z-10' />
     <Image
       src={photo}
       alt='Beso de Mabel y Esteban'
-      class='w-3/5 absolute -translate-x-full opacity-30'
+      class='grayscale-100 w-4/5 z-10'
     />
     <Image
       src={photo}
       alt='Beso de Mabel y Esteban'
-      class='w-3/5 absolute translate-x-full opacity-30'
+      class='grayscale-100 w-3/5 absolute -translate-x-full opacity-30'
+    />
+    <Image
+      src={photo}
+      alt='Beso de Mabel y Esteban'
+      class='grayscale-100 w-3/5 absolute translate-x-full opacity-30'
     />
   </picture>
 
