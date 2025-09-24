@@ -1,0 +1,162 @@
+---
+import CaptureIcon from '@/icons/capture.astro'
+import GoogleDriveIcon from '@/icons/google-drive.astro'
+import WarnIcon from '@/icons/warn.astro'
+import InstagramIcon from '@/icons/instagram.astro'
+
+import ExternalLink from './external-link.astro'
+---
+
+<section
+  class='px-8 py-14 min-h-100-screen flex flex-col items-center justify-center text-center gap-8'
+>
+  <!-- Título con decoración -->
+  <header class='space-y-4'>
+    <div class='flex items-center justify-center gap-3'>
+      <h2 class='text-2xl lg:text-3xl font-medium text-gray-800'>
+        Comparte tus Fotos
+      </h2>
+    </div>
+    <p class='text-primary leading-relaxed opacity-70'>
+      ¡Queremos ver este día especial desde tu perspectiva! Comparte tus fotos
+      con nosotros
+    </p>
+  </header>
+
+  <!-- Opciones de compartir fotos -->
+  <div class='grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-4xl'>
+    <!-- Google Photos -->
+    <div
+      class='bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300'
+    >
+      <div class='space-y-6'>
+        <div class='flex flex-col items-center space-y-3'>
+          <div
+            class='w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600'
+          >
+            <CaptureIcon class='size-10' />
+          </div>
+          <h3 class='text-xl font-semibold text-gray-800'>Álbum Compartido</h3>
+          <p class='text-sm opacity-70 text-center'>
+            Sube tus fotos directamente a nuestro álbum de Google Photos
+          </p>
+        </div>
+
+        <img
+          src='/images/QR-photos.webp'
+          alt='QR Code para acceder al álbum de Google Photos'
+          class='w-full h-auto mx-auto'
+        />
+
+        <ExternalLink
+          href='https://drive.google.com/drive/folders/1UcEl9HxwhTmWW-XKUCVEb5o8AvyAJO3K?usp=sharing'
+          text='Abrir Álbum'
+          Icon={GoogleDriveIcon}
+          bgColor='bg-blue-600'
+          textColor='text-white'
+        />
+      </div>
+    </div>
+
+    <!-- Instagram Hashtag -->
+    <div
+      class='bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300'
+    >
+      <div class='space-y-6'>
+        <div class='flex flex-col items-center space-y-3'>
+          <div
+            class='w-16 h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center text-white'
+          >
+            <InstagramIcon class='size-10' />
+          </div>
+          <h3 class='text-xl font-semibold text-gray-800'>Hashtag Oficial</h3>
+          <p class='text-sm opacity-70 text-center'>No olvides etiquetarnos</p>
+        </div>
+
+        <div
+          class='bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4 border border-purple-200'
+        >
+          <div class='text-center'>
+            <p class='text-sm opacity-70 mb-2'>Usa este hashtag:</p>
+            <div
+              class='font-mono font-bold text-purple-700 bg-white px-4 py-2 rounded-lg border border-purple-300 select-all'
+            >
+              #EstebanMabelXII
+            </div>
+            <p class='text-xs opacity-40 mt-2'>Toca para copiar</p>
+          </div>
+        </div>
+
+        <div
+          class='bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4 border border-purple-200'
+        >
+          <div class='text-center'>
+            <p class='text-sm opacity-70 mb-2'>Etiquetanos</p>
+            <div
+              class='font-mono font-bold text-purple-700 bg-white px-4 py-2 rounded-lg border border-purple-300 select-all'
+            >
+              @_mabel_rodriguez_
+            </div>
+            <div
+              class='font-mono font-bold text-purple-700 bg-white px-4 py-2 rounded-lg border border-purple-300 select-all'
+            >
+              @drummes.12
+            </div>
+            <p class='text-xs opacity-40 mt-2'>Toca para copiar</p>
+          </div>
+        </div>
+
+        <ExternalLink
+          href='https://www.instagram.com/explore/tags/EstebanMabelXII/'
+          text='Ver en Instagram'
+          Icon={InstagramIcon}
+          bgColor='bg-gradient-to-r from-purple-500 to-pink-500'
+          textColor='text-white'
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota informativa -->
+  <div
+    class='max-w-2xl mx-auto bg-amber-50 border border-amber-200 rounded-lg p-4'
+  >
+    <div class='flex items-start gap-3'>
+      <WarnIcon class='w-14 text-amber-600' />
+      <div class='text-sm text-left text-amber-800'>
+        <p class='font-medium mb-1'>¡Importante!</p>
+        <p>
+          Las fotos subidas al álbum de Google Photos serán privadas. Las
+          publicadas con hashtag serán públicas en redes sociales.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Funcionalidad para copiar hashtag al hacer clic
+  document.addEventListener('DOMContentLoaded', function () {
+    const copyElements = document.querySelectorAll('.select-all')
+    if (!copyElements) return
+
+    copyElements.forEach((copyElement) =>
+      copyElement.addEventListener('click', () => {
+        if (!copyElement.textContent) return
+        navigator.clipboard
+          .writeText(copyElement.textContent.trim())
+          .then(function () {
+            // Mostrar feedback visual
+            const originalText = copyElement.textContent
+            copyElement.textContent = '¡Copiado!'
+            copyElement.classList.add('bg-green-100', 'text-green-700')
+
+            setTimeout(function () {
+              copyElement.textContent = originalText
+              copyElement.classList.remove('bg-green-100', 'text-green-700')
+            }, 2000)
+          })
+      })
+    )
+  })
+</script>
