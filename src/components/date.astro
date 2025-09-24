@@ -2,11 +2,13 @@
 import ClockIcon from '@/icons/clock.astro'
 import HeartIcon from '@/icons/heart.astro'
 import SquareIcon from '@/icons/square.astro'
+import SectionBackground from './section-background.astro'
 ---
 
 <section
-  class='px-8 py-14 min-h-100-screen flex flex-col items-center justify-center text-center gap-4'
+  class='relative px-8 py-14 min-h-100-screen flex flex-col items-center justify-center text-center gap-4'
 >
+  <SectionBackground />
   <header class='relative flex items-center justify-center'>
     <h1 class='opacity-70 text-[17rem] leading-none'>XII</h1>
     <small
